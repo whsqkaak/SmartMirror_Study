@@ -1,4 +1,5 @@
-// 학생 식당 메뉴
+// 창의인재원 식당 메뉴
+
 var router = require('express').Router();
 let request = require('request');
 
@@ -9,11 +10,10 @@ var month_v = today.getMonth()+1;
 var year_v = today.getFullYear();
 
 /* GET home page. */
-var url = 'https://bablabs.com/openapi/v1/campuses/BVRPhfbjvn/stores/LTI0MTE0NTE5?date=2019-11-26';
+var url = 'https://bablabs.com/openapi/v1/campuses/BVRPhfbjvn/stores/LTI0MTEyNjM2?date=2019-11-26';
 var headers = {
     'accesstoken': ''
 };
-
 var query = {
     type: "null",
     date: "2019-11-26"
@@ -41,7 +41,7 @@ router.get('/', function (req, res) {
         m1 = result.store.menus[0].description;
         m2 = result.store.menus[1].description;
         m3 = result.store.menus[2].description;
-        res.render('haksik', {
+        res.render('changin', {
             menu1: m1,
             menu2: m2,
             menu3: m3
